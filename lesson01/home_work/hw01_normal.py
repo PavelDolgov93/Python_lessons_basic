@@ -73,3 +73,4 @@ elif D < 0:
 
 for otvet in otvety:
     print(otvet)
+	
