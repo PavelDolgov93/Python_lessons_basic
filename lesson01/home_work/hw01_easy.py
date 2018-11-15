@@ -7,11 +7,11 @@ __author__ = 'Долгов Павел Григорьевич'
 # * постарайтесь решить задачу с применением арифметики и цикла while;
 # * при желании решите задачу с применением цикла for.
 
-Chislo = 1234
+chislo = 1234
 
-while Chislo % 10 != 0:
-    print(Chislo % 10)
-    Chislo = Chislo//10
+while chislo % 10 != 0:
+    print(chislo % 10)
+    chislo = chislo // 10
 
 
 # Задача-2: Исходные значения двух переменных запросить у пользователя.
@@ -22,6 +22,15 @@ while Chislo % 10 != 0:
 # Не нужно решать задачу так:
 # print("a = ", b, "b = ", a) - это неправильное решение!
 
+perem1 = input('perem1 = ')
+perem2 = input('perem2 = ')
+
+perem_cash = perem1
+perem1 = perem2
+perem2 = perem_cash
+
+print('perem1 = ', perem1)
+print('perem2 = ', perem2)
 
 # Задача-3: Запросите у пользователя его возраст.
 # Если ему есть 18 лет, выведите: "Доступ разрешен",
