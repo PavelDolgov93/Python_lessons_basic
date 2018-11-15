@@ -22,6 +22,10 @@ while chislo % 10 != 0:
 # Не нужно решать задачу так:
 # print("a = ", b, "b = ", a) - это неправильное решение!
 
+print('')
+
+# В задании не указан тип переменных, поэтому решил через дополнительную переменную
+
 perem1 = input('perem1 = ')
 perem2 = input('perem2 = ')
 
@@ -32,10 +36,24 @@ perem2 = perem_cash
 print('perem1 = ', perem1)
 print('perem2 = ', perem2)
 
+# Решение через арифметические действия для чисел:
+
+perem1 = int(input('perem1 (число) = '))
+perem2 = int(input('perem2 (число) = '))
+
+perem1 = perem1 + perem2
+perem2 = perem1 - perem2
+perem1 = perem1 - perem2
+
+print('perem1 = ', perem1)
+print('perem2 = ', perem2)
+
 
 # Задача-3: Запросите у пользователя его возраст.
 # Если ему есть 18 лет, выведите: "Доступ разрешен",
 # иначе "Извините, пользование данным ресурсом только с 18 лет"
+
+print('')
 
 vozr = input('Введите возраст: ')
 
