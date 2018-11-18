@@ -1,9 +1,17 @@
+
+__author__ = 'Долгов Павел Григорьевич'
+
 # Задание-1: уравнение прямой вида y = kx + b задано в виде строки.
 # Определить координату y точки с заданной координатой x.
 
 equation = 'y = -12x + 11111140.2121'
+
 x = 2.5
 # вычислите и выведите y
+
+equation = equation.replace('x',' * ('+str(x)+')')
+exec(equation)
+print(y)
 
 
 # Задание-2: Дата задана в виде строки формата 'dd.mm.yyyy'.
@@ -54,3 +62,51 @@ date = '-2.10.3001'
 #
 # Вход: 11
 # Выход: 5 3
+
+print('')
+
+import random
+
+#N = random.randint(1, 2000000)
+N = 13
+
+
+#Определение блока этажей
+
+blok_etazhey = 1
+poslednya_kv = 0
+
+while True:
+
+    pervaya_kv = poslednya_kv + 1
+    poslednya_kv = pervaya_kv + (blok_etazhey**2 - 1)
+
+    if pervaya_kv <= N <= poslednya_kv:
+        break
+
+    blok_etazhey = blok_etazhey + 1
+
+
+#Определение этажа
+
+konec_bloka = (2 + (blok_etazhey - 1)) / 2 * blok_etazhey #Формула суммы n-первых членов арифметической прогрессии
+etazh = konec_bloka - blok_etazhey + 1
+
+poslednya_kv = pervaya_kv - 1
+
+while etazh <= konec_bloka:
+
+    pervaya_kv = poslednya_kv + 1
+    poslednya_kv = pervaya_kv + blok_etazhey - 1
+
+    if pervaya_kv <= N <= poslednya_kv:
+        break
+
+    etazh = etazh + 1
+
+
+#Определение позиции
+
+pozic_kv = N - pervaya_kv + 1
+
+print(str(etazh) + ' ' + str(pozic_kv))
