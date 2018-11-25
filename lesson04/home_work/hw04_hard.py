@@ -44,3 +44,73 @@ for i in range(10):
 # 8 9 4
 # 7 6 5
 
+print('')
+
+
+def poluchit_napravlenie(matr, x, y, size, napravlenie):
+
+    # Возможен ли шаг
+
+    if napravlenie == 'pravo':
+        if (x + 1 <= size - 1 and matr[y][x + 1] == 0):
+            pass
+        else:
+            napravlenie = 'vniz'
+
+    if napravlenie == 'vniz':
+        if (y + 1 <= size - 1 and matr[y + 1][x] == 0):
+            pass
+        else:
+            napravlenie = 'vlevo'
+
+    if napravlenie == 'vlevo':
+        if (x - 1 >= 0 and matr[y][x - 1] == 0):
+            pass
+        else:
+            napravlenie = 'vverh'
+
+    if napravlenie == 'vverh':
+        if (y - 1 >= 0 and matr[y - 1][x] == 0):
+            pass
+        else:
+            napravlenie = 'pravo'
+
+    return napravlenie
+
+
+size = int(input('Размер матрицы:'))
+matr = [ [0 for x in range(size)] for y in range(size) ]
+
+x = 0
+y = 0
+napravlenie = 'pravo'
+
+for cif in range(size*size):
+    cif = cif + 1
+
+    matr[y][x] = cif
+
+    napravlenie = poluchit_napravlenie(matr, x, y, size, napravlenie)
+
+    if napravlenie == 'pravo':
+        x = x + 1
+        continue
+
+    if napravlenie == 'vniz':
+        y = y + 1
+        continue
+
+    if napravlenie == 'vlevo':
+        x = x - 1
+        continue
+
+    if napravlenie == 'vverh':
+        y = y - 1
+        continue
+
+dlina = len(str(size*size))
+
+for y in range(size):
+    for x in range(size):
+        print(f'{matr[y][x]:>{dlina}}', end= ', ')
+    print('')
